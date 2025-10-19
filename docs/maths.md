@@ -14,7 +14,7 @@ Esta librería ofrece funciones básicas de matemáticas que aceptan un número 
 ```python
 >>> from maths import subtract_nums
 >>> subtract_nums(100, 20, 30, 40)
-696969
+420
 ```
 
 ## ✖️ Multiplicación
