@@ -3,15 +3,11 @@ name: Deploy MkDocs
 on:
   push:
     branches:
-      - main  # o 'master' si tu rama principal se llama así
-
-permissions:
-  contents: write  # 👈 Permite al bot hacer push a gh-pages
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -30,7 +26,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # 👈 usa el token con permisos
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
-          publish_branch: gh-pages
-          force_orphan: true
