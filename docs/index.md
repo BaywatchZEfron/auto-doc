@@ -1,4 +1,4 @@
-# Bienvenido a Maths Library
+# Bienvenido a AutoMaths
 
 Esta documentación explica el uso de la librería de funciones matemáticas que acepta un número indefinido de argumentos (*args).
 
