@@ -1,0 +1,6 @@
+site_name: "AutoMaths"
+nav:
+  - Home: index.md
+  - Maths Functions: maths.md
+theme:
+  name: material
