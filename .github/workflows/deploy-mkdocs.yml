@@ -1,9 +1,12 @@
-name: Deploy MkDocs to GitHub Pages
+name: Deploy MkDocs
 
 on:
   push:
     branches:
-      - main  # ejecuta el flujo cada vez que haces push a main
+      - main  # o 'master' si tu rama principal se llama así
+
+permissions:
+  contents: write  # 👈 Permite al bot hacer push a gh-pages
 
 jobs:
   deploy:
@@ -11,23 +14,23 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - name: Install MkDocs and dependencies
+      - name: Install dependencies
         run: |
           pip install mkdocs mkdocs-material
-
-      - name: Build MkDocs site
-        run: mkdocs build --site-dir site
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # 👈 usa el token con permisos
           publish_dir: ./site
           publish_branch: gh-pages
+          force_orphan: true
