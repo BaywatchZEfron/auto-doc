@@ -3,6 +3,7 @@ def divide_nums(*num):
 
     The first number is taken as the starting point,
     and all following numbers divide the current result.
+    hakuna matata
 
     :param int num: Two or more numbers to divide.
     :returns: The result of sequential division.
