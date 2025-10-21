@@ -15,6 +15,7 @@ Esta librería ofrece funciones básicas de matemáticas que aceptan un número 
 >>> from maths import subtract_nums
 >>> subtract_nums(100, 20, 30, 40)
 10
+hakuna matata
 ```
 
 ## ✖️ Multiplicación
