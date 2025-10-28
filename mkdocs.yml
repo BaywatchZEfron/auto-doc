@@ -2,5 +2,14 @@ site_name: "AutoMaths"
 nav:
   - Home: index.md
   - Maths Functions: maths.md
+  - Api: api.md
 theme:
   name: material
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+
